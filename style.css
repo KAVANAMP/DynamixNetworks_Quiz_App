@@ -1,0 +1,235 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --primary:#c68600;
+  --accent:#6a5acd;
+  --muted:#666;
+  --success:#28a745;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, Arial, sans-serif;
+  background:var(--bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width:900px;
+  margin:28px auto;
+  padding:20px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:18px;
+}
+.logo{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid #eee;
+}
+.header h1{
+  margin:0;
+  font-size:22px;
+}
+
+.screen {
+    background: #ffffff; /* solid white */
+    border-radius: 18px;
+    padding: 28px;
+    margin: 40px auto;
+    width: 70%;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    backdrop-filter: none; /* remove blur */
+}
+
+
+.hidden{display:none;}
+
+.controls{
+  margin:12px 0;
+}
+
+.primary{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.secondary{
+  background:transparent;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  cursor:pointer;
+}
+
+.top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+  gap:10px;
+}
+#level-indicator{font-weight:700}
+#score-indicator{color:var(--muted)}
+
+#progress-container{
+  width:100%;
+  height:12px;
+  background:#f0f0f0;
+  border-radius:999px;
+  overflow:hidden;
+  margin-bottom:16px;
+}
+#progress-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, var(--primary), #d4b969);
+  transition:width .4s ease;
+}
+
+#question-block h3{margin:0 0 14px 0; font-size:20px;}
+#options-container{display:flex;flex-direction:column;gap:10px;}
+.option-btn{
+  text-align:left;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #e6e6e6;
+  background:white;
+  cursor:pointer;
+  transition:transform .08s ease, background .15s;
+}
+.option-btn:active{transform:scale(.995)}
+.option-btn.disabled{opacity:.7; cursor:default;}
+.option-btn.correct{background:linear-gradient(90deg,#62dc62,#4fd04d); border-color: #b6efb4;}
+.option-btn.wrong{background:#dc6868; border-color:#f35252;}
+
+.nav-row{
+  margin-top:16px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.gold-animation{
+  width:220px;height:120px;margin:0 auto 12px auto; position:relative; overflow:visible;
+}
+
+.gold-animation::before, .gold-animation::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,236,166,.95), transparent 10%),
+              radial-gradient(circle at 80% 70%, rgba(255,200,80,.9), transparent 10%);
+  filter: blur(6px);
+  transform:scale(.3);
+  opacity:0;
+  transition:transform .6s ease, opacity .6s ease;
+}
+.gold-animation.show::before{transform:scale(1); opacity:1;}
+.gold-animation.show::after{transform:scale(1); opacity:1;}
+
+.confetti{
+  position:absolute;
+  width:8px;height:14px;
+  background:gold;
+  top:10px;
+  left:50%;
+  border-radius:2px;
+  transform-origin:center;
+  animation:confetti-fall 1300ms linear forwards;
+}
+@keyframes confetti-fall{
+  0%{transform:translateY(0) rotate(0deg); opacity:1}
+  100%{transform:translateY(140px) rotate(360deg); opacity:0}
+}
+
+.reward-text{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+#final-score-text{font-size:20px;font-weight:700}
+.footer{ text-align:center; color:var(--muted); margin-top:8px; }
+
+
+/* ------------------------------------------------------- */
+/* ⭐ ADDED CATEGORY CONTAINER — paste at the end of file ⭐ */
+/* ------------------------------------------------------- */
+.category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px;
+    text-align: center;
+}
+
+.category-container label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.category-container select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: 0.2s;
+}
+
+.category-container select:focus {
+    border-color: #8b5ef5;
+    box-shadow: 0 0 8px rgba(139, 94, 245, 0.4);
+}
+.tagline {
+    margin-top: 10px;      /* space above */
+    margin-bottom: 10px;   /* space below (increase this if you want more) */
+}
+/* 🏆 Trophy Animation Styles – Updated */
+.trophy-container {
+    display: none;            /* Hidden until level complete */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.trophy-container img {
+    width: 150px;
+    animation: trophyPop 1s ease-in-out;
+    filter: drop-shadow(0 6px 14px rgba(255, 200, 0, 0.7));
+}
+
+/* Trophy Pop In */
+@keyframes trophyPop {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.25); opacity: 1; }
+    100% { transform: scale(1); }
+}
+#level-complete-title {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+}
+
+#level-reward-text {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
