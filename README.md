@@ -1,33 +1,65 @@
-Quiz Web Application
+# 🧠 DynamixNetworks Quiz App
 
-A fast, responsive, and interactive Quiz Web Application built with HTML, CSS, and JavaScript.
-Designed to deliver a smooth user experience with clean UI, dynamic question rendering, progress indicators, and real-time answer validation.
+<p align="left">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+</p>
 
-Key Features:
-Modern UI/UX — Clean layout, smooth transitions, card-style options
-Dynamic Quiz Engine — Questions load from a JavaScript data file
-Real-Time Feedback — Correct and wrong options are visually highlighted
-Progress Tracking — A progress bar updates with each question
-Responsive Design — Works across desktop, tablet, and mobile
-Score Calculation — Final score displayed at the end of quiz
-Smooth Navigation — Splash screen → quiz → results
+> 🎯 An interactive quiz application built for **DynamixNetworks** — test your knowledge with timed questions, instant feedback, and score tracking!
 
-Project Structure:
-quiz/
-│── index.html         # Main quiz interface
-│── splash.html        # Intro splash screen
-│── style.css          # Styling, layout, UI animations
-│── script.js          # Quiz logic and event handling
-│── questions.js       # Question bank (MCQs)
+---
 
-How It Works:
-User starts the quiz from the splash screen
-Questions are fetched from questions.js
-User selects an answer → app instantly shows correct/wrong
-Progress bar updates after each question
-Final results are displayed once all questions are answered
+## 📌 About the Project
 
-Technologies Used:
-HTML5 — Page structure
-CSS3 — Styling, responsive design, animations
-JavaScript (Vanilla JS) — Logic, question loading, event handling
+This quiz app was built as part of a project for DynamixNetworks. It delivers an engaging quiz experience with multiple-choice questions, real-time scoring, and a clean, responsive UI.
+
+---
+
+## ✨ Features
+
+- ❓ Multiple choice questions
+- ⏱️ Timer per question (or overall quiz)
+- ✅ Instant right/wrong feedback
+- 📊 Score display at the end
+- 🔄 Restart/retake option
+- 📱 Responsive design
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|---|---|
+| JavaScript | Quiz logic, timer, scoring |
+| HTML5 | Structure |
+| CSS3 | Styling and animations |
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/KAVANAMP/DynamixNetworks_Quiz_App.git
+cd DynamixNetworks_Quiz_App
+
+# Open in browser
+open index.html
+```
+
+---
+
+## 🎯 What I Learned
+
+- Dynamic rendering of quiz questions with JavaScript
+- Managing state (current question, score, timer)
+- Providing real-time user feedback
+- Building responsive layouts
+
+---
+
+## 🙋‍♀️ Author
+
+**Kavana M P**  
+[GitHub](https://github.com/KAVANAMP)
